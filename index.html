@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+            
+            body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+            background-color: #cdeb55;
+            font-family: Arial, sans-serif;
+        }
+        .calculator
+        {
+            margin-top: 280px;
+        margin-right: -10vh;
+            letter-spacing: 5px;
+            font-size: 30px;
+            background: rgb(7, 141, 182);
+            padding: 50px;
+            border-radius: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            height: 300px;
+            width: 400px;
+            position: fixed;
+        
+        }
+        button {
+            background-color: rgb(50, 120, 98);    
+            color: white;          
+            font-size: 25px;          
+            padding: 10px 20px;         
+            margin: 5px;       
+            border: 2px solid blue;     
+            border-radius: 5px;         
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); 
+            cursor: pointer;           
+            transition: all 0.3s;    
+        }
+        button:hover {
+            background-color: darkblue; 
+            color: yellow;              
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.5); 
+        }
+        h1{
+            color: #faf8f8;
+            margin-bottom:50vh ;
+            margin-left: 80px;
+            position: relative;
+            border: 20px solid red;
+            border-radius: 20px;
+            font-size: 40px;
+            background-color: red;
+
+        }
+        input {
+            background-color: lightyellow; 
+            color: darkblue;               
+            border: 2px solid blue;      
+            border-radius: 5px;          
+            padding: 10px;                
+            margin: 5px;                  
+            font-size: 16px;               
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); 
+        }
+    
+    </style>
+</head>
+<body>
+    <h1>Simple Calculator</h1>
+    <div class="calculator">
+    <input type="text" id="screen">
+    <br>
+    <button id="1" onclick="display('1')">1</button>
+    <button id="2" onclick="display('2')">2</button>
+    <button id="3" onclick="display('3')">3</button>
+    
+    
+    <button id="4" onclick="display('4')">4</button>
+    <button id="5" onclick="display('5')">5</button>
+    <button id="6" onclick="display('6')">6</button>
+    
+    <button id="7" onclick="display('7')">7</button>
+    <button id="8" onclick="display('8')">8</button>
+    <button id="9" onclick="display('9')">9</button>
+    <button id="0" onclick="display('0')">0</button>
+    <button id="+" onclick="display('+')">+</button>
+    <button id="-" onclick="display('-')">-</button>
+    <button id="*" onclick="display('*')">*</button>
+    
+    
+    <button id="\" onclick="display('/')">/</button>
+    <button id="equal" onclick="result()">=</button><br>
+    <button id="c" onclick="clearscreen()">C</button>
+    <button id="." onclick="display('.')">.</button>
+</div>
+    <script>
+        function display(id)
+        {
+            let screen=document.getElementById("screen");
+            let text = document.getElementById(id).innerHTML;
+            screen.value += text;
+
+        }
+        function result()
+        {
+            let result = document.getElementById("screen").value;
+            document.getElementById("screen").value = eval(result);
+        }
+        function clearscreen()
+            {
+                let scr = document.getElementById("screen")
+                scr.value = "";
+                
+            }
+        
+    </script>
+
+</body>
+</html>
